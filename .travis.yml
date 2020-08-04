@@ -4,11 +4,7 @@ node_js:
 services:
         - docker
 
-before_install:
-        - npm install
-
 script:
-        - npm run nbuild
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - docker build -t mrrs/mrrs-hello_docker .
-        - docker push mrrs/mrrs-hello_docker
+        - docker build -t mrrs/hello_docker .
+        - docker push mrrs/hello_docker

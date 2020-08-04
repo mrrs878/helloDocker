@@ -1,13 +1,8 @@
-FROM node:12.13-alpine
+FROM nginx
 
-RUN apk add git
+COPY ./index.html /usr/share/nginx/html
 
-WORKDIR /home/mrrs878/myPro/docker_dmeo_0
+EXPOSE 80
 
-RUN npm install --only-production
-
-COPY . .
-
-CMD ["node", "index.js"]
 
 
