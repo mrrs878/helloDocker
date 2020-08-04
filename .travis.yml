@@ -6,5 +6,5 @@ services:
 
 script:
         - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - docker build -t mrrs/hello_docker .
-        - docker push mrrs/hello_docker
+        - docker build -t mrrs878/hello_docker:latest .
+        - docker push mrrs878/hello_docker:latest
